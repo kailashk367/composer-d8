@@ -1,0 +1,26 @@
+<?php
+
+/*use Drupal\Views\ViewExecutable;
+
+// Implements hook_views_pre_render().
+function hide_default_front_views_pre_render(ViewExecutable $view) {
+	kpr($view->id());
+  if($view->id() == 'frontpage' && $view->current_display == 'page_1') {
+    // Use some or all of the following 3 lines to remove specific
+    // 'no results' behaviors
+    
+    unset($view->empty['area_text_custom']);
+    unset($view->empty['node_listing_empty']);
+    unset($view->empty['title']);
+  }
+}*/
+
+function hide_default_front_page_menu_alter(&$items) {
+	kpr($items);
+  $items['node']['page callback'] = 'hide_default_front_callback';
+}
+
+function hide_default_front_callback() {
+  drupal_set_title('');
+  return array();
+}

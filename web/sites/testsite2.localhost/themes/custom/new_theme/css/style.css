@@ -1,0 +1,16 @@
+/**
+ * Place your custom styles here.
+ */
+
+div.navbar-header {
+	display: block;
+    float: none;
+}
+
+body{
+    margin: 0;
+    padding: 0;
+    /*font-family: 'Lato', sans-serif;  */
+    font-family: 'DIN';
+    background: #968a8a;
+}
